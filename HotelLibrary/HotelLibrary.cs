@@ -40,4 +40,12 @@ namespace HotelLibrary
         }
     }
 
+    public class Maintenance
+    {
+        public Maintenance()
+        {
+
+        }
+    }
+
 }
