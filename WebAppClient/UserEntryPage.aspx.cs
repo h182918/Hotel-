@@ -16,7 +16,15 @@ namespace WebAppClient
             //bookings = DB.getbookings(userID)
             //if user has bookings 
             //list active bookings
-            //
+        }
+
+        protected void CheckBooking_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Register.aspx");
+        }
+        protected void CreateBooking_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CreateBooking.aspx");
         }
     }
 }
