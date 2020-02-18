@@ -18,6 +18,8 @@ namespace WebAppClient
             //list active bookings
         }
 
+
+        // en kommentar
         protected void CheckBooking_Click(object sender, EventArgs e)
         {
             Response.Redirect("Register.aspx");
