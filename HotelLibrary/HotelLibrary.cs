@@ -32,7 +32,11 @@ namespace HotelLibrary
         public string note { get; private set; }
         public Booking(int customerId, int roomId, DateTime to, DateTime from, string note)
         {
-
+            this.customerId = customerId;
+            this.roomId = roomId;
+            this.to = to;
+            this.from = from;
+            this.note = note;
         }
     }
 
