@@ -9,6 +9,18 @@ namespace HotelLibrary
         Triple,
         King
     }
+    public enum maintenanceType
+    {
+        RoomService,
+        Maintenance,
+        Cleaning
+    }
+    public enum maintenanceStatus
+    {
+        Todo,
+        Doing,
+        Done
+    }
     public class HotelRoom
     {
         public int nBeds { get; private set; }
@@ -42,9 +54,17 @@ namespace HotelLibrary
 
     public class Maintenance
     {
-        public Maintenance()
-        {
+        public maintenanceType mt { get; private set; }
+        public int roomId { get; private set; }
+        public string note { get; private set; }
+        public maintenanceStatus ms { get; private set; }
 
+        public Maintenance(maintenanceType mt, int roomId, maintenanceStatus ms, string note)
+        {
+            this.mt = mt;
+            this.roomId = roomId;
+            this.ms = ms;
+            this.note = note;
         }
     }
 
