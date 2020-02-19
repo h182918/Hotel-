@@ -35,7 +35,7 @@ namespace WebAppClient
         // en kommentar
         protected void CheckBooking_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Register.aspx");
+            Response.Redirect("CheckBooking.aspx");
         }
         protected void CreateBooking_Click(object sender, EventArgs e)
         {

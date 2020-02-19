@@ -11,6 +11,8 @@ namespace WebAppClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //getAllRooms
+            //getAllBookings
 
         }
     }

@@ -16,7 +16,7 @@
             </p>
             <div>
                 <div>
-                    <asp:Button runat="server" OnClick="CheckBookings_Click" Text="My bookings" />
+                    <asp:Button runat="server" OnClick="CheckBooking_Click" Text="My bookings" />
                 </div>
             </div>
             <div>
