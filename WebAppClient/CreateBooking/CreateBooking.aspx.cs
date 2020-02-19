@@ -1,62 +1,73 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Web;
-//using System.Web.UI;
-//using System.Web.UI.WebControls;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using HotelLibrary;
 
-//namespace WebAppClient.CreateBooking
-//{
-//    public partial class CreateBooking : System.Web.UI.Page
-//    {
+namespace WebAppClient.CreateBooking
+{
+    public partial class CreateBooking : System.Web.UI.Page
+    {
 
-//        List<Booking> bookings;
-//        List<HotelRoom> rooms;
+        List<Booking> bookings;
+        List<HotelRoom> rooms;
 
-//        protected void Page_Load(object sender, EventArgs e)
-//        {
-//            foreach(HotelRoom r in rooms)
-//            {
-//                if(r.roomId )
-//            }
-//            //set date
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
+            //set date
+            //bruker velger date, beds size 
 
-
-//        }
-
-//        protected void FindRooms(object sender, EventArgs e)
-//        {
-       
+            //skriver ut et rom som er ledig
+            //button 
+            //book this room - db
 
 
-//            Response.Redirect("CreateBooking.aspx");
-//        }
-
-//        protected bool AvailableRoom(DateTime dateFrom, DateTime dateTo, int nBeds, Enum.Size size)
-//        {
-//            var validItems = items.Where(i => i.Field != null && i.State != ItemStates.Deleted);
-//            // command
-//            foreach (var item in validItems)
-//            {
-//                // do stuff
-
-//                List<HotelRoom> validRooms= rooms.Where(i => i.nbeds == nBeds && i.size.Equals(size));
 
 
-//                //loop through rooms 
-//                foreach(HotelRoom r in validRooms)
-//                {
-//                    if()
-//                }
-//            {
-//                if(rooms.)
-//                {
-//                    return false;
-//                }
-//            }
+        }
 
-//        }
+        protected List<HotelRoom> AvailableRooms(DateTime dateFrom, DateTime dateTo, int nBeds, Size size)
+        {
+            var validRooms = rooms.Where(i => i.nBeds == nBeds && i.size.Equals(size));
+           
+         
+            List<HotelRoom> validR = validRooms.ToList();
 
-//    }
-//}
+
+            //loop through rooms 
+            foreach (HotelRoom r in validR)
+            {
+                if (!DateCheck(dateFrom, dateTo, r))
+                {
+                    validR.Remove(r);
+                }
+
+
+            }
+            return validR;
+    
+
+        }
+
+        protected bool DateCheck(DateTime dateFrom, DateTime dateTo, HotelRoom room)
+        {
+
+            for (DateTime date = dateFrom; date <= dateTo; date = date.AddDays(1))
+            {
+                
+                foreach(Booking b in bookings) { 
+                    if(!(date >= b.from && date <= b.to)) {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+             
+        }
+
+    }
+}

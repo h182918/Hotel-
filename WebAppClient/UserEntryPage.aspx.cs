@@ -36,8 +36,7 @@ namespace WebAppClient
                 }
             }
 
-         
-            //list active bookings
+        
         }
 
 
