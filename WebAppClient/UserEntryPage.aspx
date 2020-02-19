@@ -24,6 +24,15 @@
                     <asp:Button runat="server" OnClick="CreateBooking_Click" Text="New booking" />
                 </div>
             </div>
+
+            <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:BoundField DataField="roomId" HeaderText="Room #" />
+                    <asp:BoundField DataField="dateFrom" HeaderText="From" />
+                    <asp:BoundField DataField="dateTo" HeaderText="To" />
+                </Columns>
+            </asp:GridView>
+
         </div>
     </form>
 </body>
