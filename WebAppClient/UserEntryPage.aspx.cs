@@ -1,5 +1,6 @@
 ﻿using HotelLibrary;
 using System;
+using System.Collections.Generic;
 
 namespace WebAppClient
 {
@@ -7,10 +8,26 @@ namespace WebAppClient
     {
 
         List<Booking> bookings;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //bookings = DB.getbookings(userID)
             //if user has bookings 
+
+
+            foreach(Booking b in bookings)
+            {
+                if(b.customerId != -1)  //må sette customerID til -1 hvis det ikke finnes
+                {
+
+                }
+
+            }
+            {
+
+            }
+
+         
             //list active bookings
         }
 
