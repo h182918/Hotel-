@@ -21,6 +21,13 @@ namespace HotelLibrary
         Doing,
         Done
     }
+
+    public enum Status
+    {
+        Booked, 
+        CheckedIn,
+        CheckedOut
+    }
     public class HotelRoom
     {
         public int nBeds { get; private set; }
@@ -41,13 +48,15 @@ namespace HotelLibrary
         public int roomId { get; set; }
         public DateTime to { get; set; }
         public DateTime from { get; set; }
+        public Status status { get; set; }
         public string note { get; set; }
-        public Booking(int customerId, int roomId, DateTime to, DateTime from, string note)
+        public Booking(int customerId, int roomId, DateTime to, DateTime from, Status status, string note)
         {
             this.customerId = customerId;
             this.roomId = roomId;
             this.to = to;
             this.from = from;
+            this.status = status;
             this.note = note;
         }
     }
