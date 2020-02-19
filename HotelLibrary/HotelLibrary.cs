@@ -68,4 +68,17 @@ namespace HotelLibrary
         }
     }
 
+    public class User
+    {
+        public int userId { get; private set; }
+        public string firstName { get; private set; }
+        public string surName { get; private set; }
+        public User(int userId, string firstName, string surName)
+        {
+            this.userId = userId;
+            this.firstName = firstName;
+            this.surName = surName;
+        }
+    }
+
 }
