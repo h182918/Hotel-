@@ -37,11 +37,11 @@ namespace HotelLibrary
 
     public class Booking
     {
-        public int customerId { get; private set; }
-        public int roomId { get; private set; }
-        public DateTime to { get; private set; }
-        public DateTime from { get; private set; }
-        public string note { get; private set; }
+        public int customerId { get;  set; }
+        public int roomId { get; set; }
+        public DateTime to { get; set; }
+        public DateTime from { get; set; }
+        public string note { get; set; }
         public Booking(int customerId, int roomId, DateTime to, DateTime from, string note)
         {
             this.customerId = customerId;
