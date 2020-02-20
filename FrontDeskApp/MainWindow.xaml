@@ -35,7 +35,7 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             Margin="20,0,20,0"
-           
+            Click="Reservation_Click" 
             Background="LightGray">
             </Button>
             <Button Name="Services"
@@ -44,7 +44,7 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             Margin="20,0,20,0"
-            
+            Click="Services_Click"
             Background="LightGray">
             </Button>
         </Grid>

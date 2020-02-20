@@ -67,7 +67,15 @@ namespace FrontDeskApp
             }
         }
 
-        
+        private void Services_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void Reservation_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
            
