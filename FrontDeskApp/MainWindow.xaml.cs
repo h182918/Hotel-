@@ -34,7 +34,8 @@ namespace FrontDeskApp
 
         void ChangeStatus(int roomId, Status status)
         {
-            foreach(Booking b in bookings)
+            bookingService bs = new bookingService();
+            foreach(Booking b in bs.bookings)
             {
                 if (b.roomId == roomId)
                 {
@@ -49,7 +50,8 @@ namespace FrontDeskApp
 
         void CallService(int roomId, maintenanceType mt)
         {
-            foreach(HotelRoom room in hotelRooms)
+            bookingService bs = new bookingService();
+            foreach(HotelRoom room in bs.rooms)
             {
                 if(room.roomId == roomId)
                 {
@@ -59,7 +61,8 @@ namespace FrontDeskApp
         }
         void CallService(int roomId, maintenanceType mt, string note)
         {
-            foreach (HotelRoom room in hotelRooms)
+            bookingService bs = new bookingService();
+            foreach (HotelRoom room in bs.rooms)
             {
                 if (room.roomId == roomId)
                 {
