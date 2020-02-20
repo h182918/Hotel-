@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace HotelLibrary
 {
@@ -111,6 +112,26 @@ namespace HotelLibrary
         public static T convertToEnum<T>(string value)
         {
             return (T)Enum.Parse(typeof(T), value, true);
+        }
+
+
+        protected bool DateCheck(List<Booking> bookings, DateTime dateFrom, DateTime dateTo, HotelRoom room)
+        {
+
+            for (DateTime date = dateFrom; date <= dateTo; date = date.AddDays(1))
+            {
+
+                foreach (Booking b in bookings)
+                {
+                    if (!(date >= b.from && date <= b.to))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+
         }
     }
 

@@ -48,8 +48,8 @@ namespace WebAppClient.CreateBooking
 
             dateFrom = DateFromCalendar.SelectedDate;
             dateTo = DateToCalendar.SelectedDate;  //litt usikker på om dette fungerer
-         
-            nBeds = 
+
+            nBeds = DropDownList1.Items.FindByValue("1");
 
             List<HotelRoom> validR = validRooms.ToList();
 
