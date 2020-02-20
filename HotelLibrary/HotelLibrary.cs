@@ -93,7 +93,7 @@ namespace HotelLibrary
 
     public class bookingService
     {
-        Booking newBooking(HotelLibrary.Size size, int customerId, DateTime to, DateTime from, Status status)
+        Booking newBooking(string size, int customerId, DateTime to, DateTime from, Status status)
         {
             int roomId = findVacantRoom(size, to, from);
             Booking b = new Booking(customerId, roomId, to, from, status);
@@ -115,7 +115,7 @@ namespace HotelLibrary
         }
 
 
-        protected bool DateCheck(List<Booking> bookings, DateTime dateFrom, DateTime dateTo, HotelRoom room)
+        public bool DateCheck(List<Booking> bookings, DateTime dateFrom, DateTime dateTo, HotelRoom room)
         {
 
             for (DateTime date = dateFrom; date <= dateTo; date = date.AddDays(1))

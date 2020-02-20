@@ -14,6 +14,8 @@ namespace WebAppClient.CreateBooking
         List<Booking> bookings;
         List<HotelRoom> rooms;
 
+        bookingService bookingService = new bookingService();
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -42,14 +44,15 @@ namespace WebAppClient.CreateBooking
 
         }
 
-        protected List<HotelRoom> AvailableRooms(DateTime dateFrom, DateTime dateTo, int nBeds, Size size)
+        protected List<HotelRoom> AvailableRooms(DateTime dateFrom, DateTime dateTo, int nBeds, string size)
         {
             var validRooms = rooms.Where(i => i.nBeds == nBeds && i.size.Equals(size));
 
             dateFrom = DateFromCalendar.SelectedDate;
             dateTo = DateToCalendar.SelectedDate;  //litt usikker på om dette fungerer
 
-            nBeds = DropDownList1.Items.FindByValue("1");
+            nBeds = int.Parse(DropDownList1.Items.FindByValue("1").Value); //usikker på dette og må teste
+
 
             List<HotelRoom> validR = validRooms.ToList();
 
@@ -58,6 +61,7 @@ namespace WebAppClient.CreateBooking
             foreach (HotelRoom r in validR)
             {
                 if (!DateCheck(dateFrom, dateTo, r))
+                
                 {
                     validR.Remove(r);
                 }
@@ -69,22 +73,7 @@ namespace WebAppClient.CreateBooking
 
         }
 
-        protected bool DateCheck(DateTime dateFrom, DateTime dateTo, HotelRoom room)
-        {
-
-            for (DateTime date = dateFrom; date <= dateTo; date = date.AddDays(1))
-            {
-                
-                foreach(Booking b in bookings) { 
-                    if(!(date >= b.from && date <= b.to)) {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
-             
-        }
+      
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
