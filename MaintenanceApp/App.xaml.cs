@@ -30,6 +30,8 @@ namespace MaintenanceApp
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+           
+
         }
 
         /// <summary>

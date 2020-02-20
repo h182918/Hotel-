@@ -241,6 +241,7 @@ C:\Users\Sondr\Documents\DAT154\Hotel-\WebAppClient\obj\Debug\WebAppClient.cspro
 C:\Users\Sondr\Documents\DAT154\Hotel-\WebAppClient\obj\Debug\WebAppClient.csproj.CopyComplete
 C:\Users\Sondr\Documents\DAT154\Hotel-\WebAppClient\obj\Debug\WebAppClient.dll
 C:\Users\Sondr\Documents\DAT154\Hotel-\WebAppClient\obj\Debug\WebAppClient.pdb
+<<<<<<< Updated upstream
 C:\Users\BettyBlue\source\repos\h182918\Hotel-\WebAppClient\bin\WebAppClient.dll.config
 C:\Users\BettyBlue\source\repos\h182918\Hotel-\WebAppClient\bin\WebAppClient.dll
 C:\Users\BettyBlue\source\repos\h182918\Hotel-\WebAppClient\bin\WebAppClient.pdb
@@ -334,3 +335,7 @@ C:\Users\BettyBlue\source\repos\h182918\Hotel-\WebAppClient\obj\Debug\WebAppClie
 C:\Users\BettyBlue\source\repos\h182918\Hotel-\WebAppClient\obj\Debug\WebAppClient.csproj.CopyComplete
 C:\Users\BettyBlue\source\repos\h182918\Hotel-\WebAppClient\obj\Debug\WebAppClient.dll
 C:\Users\BettyBlue\source\repos\h182918\Hotel-\WebAppClient\obj\Debug\WebAppClient.pdb
+=======
+C:\Users\torke\source\repos\WebAppClient\Hotel-\WebAppClient\bin\HotelLibrary.dll
+C:\Users\torke\source\repos\WebAppClient\Hotel-\WebAppClient\bin\HotelLibrary.pdb
+>>>>>>> Stashed changes

@@ -8,7 +8,58 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-
+    <Grid Name="buttonGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="250"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="1"  
+                   Text="Choose your occupation" 
+                   HorizontalAlignment="Center" 
+                   TextAlignment="Center"
+                   FontSize="25"/>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"></ColumnDefinition>
+                <ColumnDefinition Width="*" ></ColumnDefinition>
+                <ColumnDefinition Width="10"></ColumnDefinition>
+                <ColumnDefinition Width="*" ></ColumnDefinition>
+                <ColumnDefinition Width="10"></ColumnDefinition>
+                <ColumnDefinition Width="*" ></ColumnDefinition>
+                <ColumnDefinition Width="250"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Name="Maintenance"
+                    Grid.Row="3" 
+                    Grid.Column="1" 
+                    Content="Maintenance" 
+                    Margin="0,0,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="76" 
+                    HorizontalAlignment="Stretch"
+                    Click="Maintenance_Click"/>
+            <Button Name="RoomService"
+                    Grid.Row="3" 
+                    Grid.Column="3" 
+                    Content="Room Service" 
+                    Margin="0,0,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="76" 
+                    HorizontalAlignment="Stretch"
+                    Click="RoomService_Click"/>
+            <Button Name="Cleaning"
+                    Grid.Row="3" 
+                    Grid.Column="5" 
+                    Content="Cleaning" 
+                    Margin="0,0,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="76" 
+                    HorizontalAlignment="Stretch"
+                    Click="Cleaning_Click"/>
+        </Grid>
+       
     </Grid>
 </Page>
