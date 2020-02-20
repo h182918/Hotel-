@@ -15,6 +15,16 @@ namespace WebAppClient.CreateBooking
         List<HotelRoom> rooms;
 
         bookingService bs = new bookingService();
+      
+        Size Size
+        {
+            get
+            {
+                return bs.convertToEnum<Size>(DropDownList2.SelectedValue);
+                    
+            
+            }
+        }
 
 
         DateTime DateFrom
@@ -46,6 +56,7 @@ namespace WebAppClient.CreateBooking
 
             set { NBeds = value; }
         }
+
 
 
 
@@ -85,6 +96,16 @@ namespace WebAppClient.CreateBooking
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
+            List<HotelRoom> availableRooms = bs.AvailableRooms(bookings, rooms, DateFrom, DateTo, NBeds, Size);
+
+            if(bs.firstValidRoomFromList(availableRooms) != null)
+            {
+                
+                //Create button - Yes it is available, do you want to book?
+                //onmouseclick - makeReservation.
+
+            }
 
         }
     }
