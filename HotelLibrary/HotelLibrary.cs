@@ -9,7 +9,7 @@ namespace HotelLibrary
         Single,
         Double,
         Triple,
-        King
+        Suite
     }
     public enum maintenanceType
     {
@@ -26,16 +26,16 @@ namespace HotelLibrary
 
     public enum Status
     {
-        Booked, 
+        Booked,
         CheckedIn,
         CheckedOut
     }
 
     public class HotelRoom
     {
-        public int nBeds { get; private set; }
-        public Size size { get; private set; }
-        public int roomId { get; private set; }
+        public int nBeds { get; set; }
+        public Size size { get; set; }
+        public int roomId { get; set; }
         public HotelRoom(int roomId, Size size, int nBeds)
         {
             this.roomId = roomId;
@@ -49,7 +49,7 @@ namespace HotelLibrary
 
     public class Booking
     {
-        public int customerId { get;  set; }
+        public int customerId { get; set; }
         public int roomId { get; set; }
         public DateTime to { get; set; }
         public DateTime from { get; set; }
@@ -68,10 +68,10 @@ namespace HotelLibrary
 
     public class Maintenance
     {
-        public maintenanceType mt { get; private set; }
-        public int roomId { get; private set; }
-        public string note { get; private set; }
-        public maintenanceStatus ms { get; private set; }
+        public maintenanceType mt { get;  set; }
+        public int roomId { get;  set; }
+        public string note { get;  set; }
+        public maintenanceStatus ms { get;  set; }
 
         public Maintenance(maintenanceType mt, int roomId, maintenanceStatus ms, string note)
         {
@@ -84,9 +84,9 @@ namespace HotelLibrary
 
     public class User
     {
-        public int userId { get; private set; }
-        public string firstName { get; private set; }
-        public string surName { get; private set; }
+        public int userId { get;  set; }
+        public string firstName { get;  set; }
+        public string surName { get;  set; }
         public User(int userId, string firstName, string surName)
         {
             this.userId = userId;
@@ -100,6 +100,8 @@ namespace HotelLibrary
         Booking newBooking(string size, int customerId, DateTime to, DateTime from, Status status)
         {
             int roomId = findVacantRoom(size, to, from);
+
+
             string s = "Customer Id: " + customerId.ToString() + " has booked this room";
             Booking b = new Booking(customerId, roomId, to, from, status, s);
 
@@ -114,7 +116,7 @@ namespace HotelLibrary
             return roomId;
         }
 
-        public static T convertToEnum<T>(string value)
+        public T convertToEnum<T>(string value)
         {
             return (T)Enum.Parse(typeof(T), value, true);
         }
@@ -139,9 +141,12 @@ namespace HotelLibrary
 
         }
 
-        public List<HotelRoom> AvailableRooms(List<Booking> bookings, List<HotelRoom> rooms, DateTime dateFrom, DateTime dateTo, int nBeds)
+        public List<HotelRoom> AvailableRooms(List<Booking> bookings, List<HotelRoom> rooms, DateTime dateFrom, DateTime dateTo, int nBeds, Size size)
         {
-            var validRooms = rooms.Where(i => i.nBeds == nBeds);
+
+
+            var validRooms = rooms.Where(i => i.nBeds == nBeds && i.size.Equals(s));
+
             List<HotelRoom> validR = validRooms.ToList();
 
             //loop through rooms 
@@ -158,11 +163,11 @@ namespace HotelLibrary
 
         }
 
- 
 
-        public HotelRoom validRoom(List<HotelRoom> availableRooms)
+
+        public HotelRoom firstValidRoomFromList(List<HotelRoom> availableRooms)
         {
-            return availableRooms.First(); 
+            return availableRooms.First();
         }
 
 

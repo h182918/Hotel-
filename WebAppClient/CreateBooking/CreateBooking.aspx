@@ -7,7 +7,7 @@
     <title></title>
     <style type="text/css">
         #form1 {
-            height: 754px;
+            height: 850px;
         }
     </style>
 </head>
@@ -28,6 +28,12 @@
         <asp:ListItem Value="2"> 3 beds </asp:ListItem>
     
     </asp:DropDownList>
+        <asp:DropDownList ID="DropDownList2" runat="server" OnSelectedIndexChanged="DropDownList_SelectedIndexChanged">
+            <asp:ListItem Selected="True" Value="Single"> Single</asp:ListItem>
+            <asp:ListItem Value="Double">Double</asp:ListItem>
+            <asp:ListItem Value="Triple">Triple</asp:ListItem>
+            <asp:ListItem Value="Suite">Suite</asp:ListItem>
+        </asp:DropDownList>
     <br />
 
 
@@ -57,6 +63,17 @@
 
 
         <asp:Calendar ID="DateToCalendar" runat="server" SelectedDate='<%# Bind("dateTo") %>'></asp:Calendar>
+
+
+
+
+
+
+
+
+        <br />
+        <br />
+        <asp:Button ID="ButtonSend" runat="server" OnClick="Button1_Click" Text="Check Availability" />
 
 
 
