@@ -6,8 +6,7 @@ namespace WebAppClient
 {
     public partial class UserEntryPage : System.Web.UI.Page
     {
-
-        List<Booking> bookings;
+        private readonly List<Booking> bookings;
 
 
 

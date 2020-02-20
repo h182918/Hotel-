@@ -17,6 +17,17 @@ namespace WebAppClient.CreateBooking
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
+
+           
+            //DropDownList DropList = new DropDownList();
+
+            //DropList.ID = "nbeds";
+            //DropList.AutoPostBack = true;
+
+            //DropList.DataBind();
+
+
             //set date
             //bruker velger date, beds size 
 
@@ -24,6 +35,8 @@ namespace WebAppClient.CreateBooking
             //button 
             //book this room - db
 
+            //--- Show results in page.
+        
 
 
 
@@ -32,8 +45,12 @@ namespace WebAppClient.CreateBooking
         protected List<HotelRoom> AvailableRooms(DateTime dateFrom, DateTime dateTo, int nBeds, Size size)
         {
             var validRooms = rooms.Where(i => i.nBeds == nBeds && i.size.Equals(size));
-           
+
+            dateFrom = DateFromCalendar.SelectedDate;
+            dateTo = DateToCalendar.SelectedDate;  //litt usikker på om dette fungerer
          
+            nBeds = 
+
             List<HotelRoom> validR = validRooms.ToList();
 
 
@@ -68,6 +85,13 @@ namespace WebAppClient.CreateBooking
             return false;
              
         }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
 
     }
 }

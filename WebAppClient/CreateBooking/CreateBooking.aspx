@@ -5,30 +5,66 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        #form1 {
+            height: 754px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
         </div>
+        <p>
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        </p>
+        Find Room <br />
+    <br />
+    <br />
+    Number of beds:<br />
+    <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+    
+    
+    </asp:DropDownList>
+    <br />
+
+
+
+        <br />
+        Date from:
+        <br />
+        
+      
+        
+        
+        <asp:Calendar ID="DateFromCalendar" runat="server" SelectedDate='<%# Bind("dateFrom") %>'>
+
+            <SelectedDayStyle BackColor="LightGray" Font-Bold="True"></SelectedDayStyle>
+            
+
+
+        </asp:Calendar>
+
+
+       <br />
+
+        Date to:
+
+
+        <br />
+
+
+        <asp:Calendar ID="DateToCalendar" runat="server" SelectedDate='<%# Bind("dateTo") %>'></asp:Calendar>
+
+
+
+
+
+
+
+
     </form>
 
-<form runat="server">
-Enter your name:
-<asp:TextBox id="txt1" runat="server" />
-<asp:Button OnClick="submit" Text="Submit" runat="server" />
-<p><asp:Label id="lbl1" runat="server" /></p>
-</form>
-
-    <asp:DropDownList ID="DropDownList1" runat="server" Label="Number of beds">
-        <asp:ListItem ID="nBeds" runat="server" Text="1 bed" Value="1">
-        </asp:ListItem>
-
-        <asp:ListItem ID="ListItem2" runat="server" Text="2 bed" Value="2">
-        </asp:ListItem>
-
-
-    </asp:DropDownList>
-
-
+      
 </body>
 </html>
