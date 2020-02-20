@@ -23,7 +23,9 @@
     <br />
     Number of beds:<br />
     <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
-    
+        <asp:ListItem Selected="True" Value="1"> 1 bed </asp:ListItem>
+        <asp:ListItem Value="2"> 2 beds </asp:ListItem>
+        <asp:ListItem Value="2"> 3 beds </asp:ListItem>
     
     </asp:DropDownList>
     <br />
