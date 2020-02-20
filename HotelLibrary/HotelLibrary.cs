@@ -100,7 +100,8 @@ namespace HotelLibrary
         Booking newBooking(string size, int customerId, DateTime to, DateTime from, Status status)
         {
             int roomId = findVacantRoom(size, to, from);
-            Booking b = new Booking(customerId, roomId, to, from, status);
+            string s = "Customer Id: " + customerId.ToString() + " has booked this room";
+            Booking b = new Booking(customerId, roomId, to, from, status, s);
 
             return b;
         }

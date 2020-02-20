@@ -24,6 +24,7 @@ namespace FrontDeskApp
         public MainWindow()
         {
             InitializeComponent();
+            bookingService bs = new bookingService();
         }
 
         void DrawMenu()
