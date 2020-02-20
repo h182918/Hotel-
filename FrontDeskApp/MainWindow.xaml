@@ -6,10 +6,47 @@
         xmlns:local="clr-namespace:FrontDeskApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Canvas Name="myCanvas">
+    <Grid Name="FrontDeskGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock 
+            Text="Choose an option"
+            Grid.Row="1"
+            Margin="10" 
+            Foreground="Black"
+            TextAlignment="Center"
+            HorizontalAlignment="Center"/>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Name="Reservation"
+            Content="Reservations"
+            Grid.Column="1"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Margin="20,0,20,0"
+           
+            Background="LightGray">
+            </Button>
+            <Button Name="Services"
+            Content="Services"
+            Grid.Column="2"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Margin="20,0,20,0"
             
-        </Canvas>
-        
+            Background="LightGray">
+            </Button>
+        </Grid>
     </Grid>
 </Window>

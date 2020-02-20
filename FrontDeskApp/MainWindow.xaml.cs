@@ -24,7 +24,6 @@ namespace FrontDeskApp
         public MainWindow()
         {
             InitializeComponent();
-            
         }
 
         void DrawMenu()
@@ -34,8 +33,7 @@ namespace FrontDeskApp
 
         void ChangeStatus(int roomId, Status status)
         {
-            bookingService bs = new bookingService();
-            foreach(Booking b in bs.bookings)
+            foreach(Booking b in bookings)
             {
                 if (b.roomId == roomId)
                 {
@@ -50,8 +48,7 @@ namespace FrontDeskApp
 
         void CallService(int roomId, maintenanceType mt)
         {
-            bookingService bs = new bookingService();
-            foreach(HotelRoom room in bs.rooms)
+            foreach(HotelRoom room in hotelRooms)
             {
                 if(room.roomId == roomId)
                 {
@@ -61,41 +58,12 @@ namespace FrontDeskApp
         }
         void CallService(int roomId, maintenanceType mt, string note)
         {
-            bookingService bs = new bookingService();
-            foreach (HotelRoom room in bs.rooms)
+            foreach (HotelRoom room in hotelRooms)
             {
                 if (room.roomId == roomId)
                 {
                     Maintenance m = new Maintenance(mt, roomId, maintenanceStatus.Todo, note);
                 }
-            }
-        }
-
-        void addReservation(int customerId, DateTime dateFrom, DateTime dateTo, int nbeds, string s)
-        {
-            //Noen tanker rundt customerId greiene?
-            bookingService bs = new bookingService();
-
-
-            HotelLibrary.Size size = bs.convertToEnum<HotelLibrary.Size>(s);
-
-            
-            Booking b = bs.newBooking(size, nbeds, customerId, dateTo, dateFrom, Status.CheckedIn);
-
-            bs.bookings.Add(b);
-
-        }
-
-        void removeReservation(int customerId, int roomId)
-        {
-            bookingService bs = new bookingService();
-            foreach(Booking b in bs.bookings)
-            {
-            if(b.roomId == roomId && b.customerId == customerId)
-                {
-                    bs.bookings.Remove(b);
-                }
-
             }
         }
 
