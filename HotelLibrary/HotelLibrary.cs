@@ -146,11 +146,11 @@ namespace HotelLibrary
         {
 
 
-            var validRooms = rooms.Where(i => i.nBeds == nBeds && i.size.Equals(s));
+            var validRooms = rooms.Where(i => i.nBeds == nBeds && i.size.Equals(size));
 
             List<HotelRoom> validR = validRooms.ToList();
 
-            //loop through rooms 
+            //loop through rooms and filter with date
             foreach (HotelRoom r in validR)
             {
                 if (!DateCheck(bookings, dateFrom, dateTo, r))
