@@ -9,33 +9,58 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Grid Name="buttonGrid">
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"></RowDefinition>
                 <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="150"></RowDefinition>
+                <RowDefinition Height="35"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="250"></RowDefinition>
-                <RowDefinition Height="10"></RowDefinition>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="1"  
-                   Text="Cleaning" 
+                   Text="Maintenance" 
                    HorizontalAlignment="Center" 
                    TextAlignment="Center"
                    FontSize="25"/>
-            <Grid Grid.Row="3">
+            <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="250"></ColumnDefinition>
                     <ColumnDefinition Width="*" ></ColumnDefinition>
-                    <ColumnDefinition Width="10"></ColumnDefinition>
                     <ColumnDefinition Width="*" ></ColumnDefinition>
-                    <ColumnDefinition Width="10"></ColumnDefinition>
                     <ColumnDefinition Width="*" ></ColumnDefinition>
                     <ColumnDefinition Width="250"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-
+                <TextBlock Text="Roomnumber"
+                           Grid.Column="0"
+                           HorizontalAlignment="Center" 
+                           TextAlignment="Center"
+                           FontSize="25"/>
+                <TextBlock Text="Note" 
+                           Grid.Column="1"
+                           HorizontalAlignment="Center" 
+                           TextAlignment="Center"
+                           FontSize="25"/>
+                <TextBlock Text="Status" 
+                           Grid.Column="2"
+                           HorizontalAlignment="Center" 
+                           TextAlignment="Center"
+                           FontSize="25"/>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                    <ColumnDefinition Width="250"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Name="Update"
+                    Grid.Row="3" 
+                    Grid.Column="6" 
+                    Content="Update tasks" 
+                    Margin="10,0,10,0" 
+                    VerticalAlignment="Center" 
+                    Height="76" 
+                    HorizontalAlignment="Stretch"
+                    Click="Update_Click"/>
             </Grid>
         </Grid>
-
     </Grid>
 </Page>

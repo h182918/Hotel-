@@ -27,7 +27,7 @@
                     <ColumnDefinition Width="*" ></ColumnDefinition>
                     <ColumnDefinition Width="250"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="RoomNumber"
+                <TextBlock Text="Roomnumber"
                            Grid.Column="0"
                            HorizontalAlignment="Center" 
                            TextAlignment="Center"
