@@ -24,7 +24,7 @@ namespace FrontDeskApp
         public MainWindow()
         {
             InitializeComponent();
-            bookingService bs = new bookingService();
+            
         }
 
         void DrawMenu()
@@ -66,6 +66,22 @@ namespace FrontDeskApp
                     Maintenance m = new Maintenance(mt, roomId, maintenanceStatus.Todo, note);
                 }
             }
+        }
+
+        void addReservation(int customerId, DateTime dateFrom, DateTime dateTo, int nbeds, string s)
+        {
+            //Noen tanker rundt customerId greiene?
+            bookingService bs = new bookingService();
+
+
+            HotelLibrary.Size size = bs.convertToEnum<HotelLibrary.Size>(s);
+
+
+            
+            Booking b = bs.newBooking(size, nbeds, customerId, dateTo, dateFrom, Status.CheckedIn);
+
+            bs.bookings.Add(b);
+
         }
 
         

@@ -98,9 +98,17 @@ namespace HotelLibrary
     public class bookingService
     {
         //TODO Get DB call
-        Booking newBooking(string size, int customerId, DateTime to, DateTime from, Status status)
+        public List<Booking> bookings { get; set; }
+        public List<HotelRoom> rooms { get; set; }
+
+        public bookingService()
         {
-            int roomId = findVacantRoom(size, to, from);
+            bookings = //ServerKall();
+            rooms = //ServerKall();
+        }
+        public Booking newBooking(Size size, int nbeds, int customerId, DateTime to, DateTime from, Status status)
+        {
+            int roomId = firstValidRoomFromList(AvailableRooms(bookings, rooms, from, to, nbeds, size)).roomId;
 
 
             string s = "Customer Id: " + customerId.ToString() + " has booked this room";
@@ -109,13 +117,6 @@ namespace HotelLibrary
             return b;
         }
 
-        int findVacantRoom(string size, DateTime to, DateTime from)
-        {
-            HotelLibrary.Size s = convertToEnum<HotelLibrary.Size>(size);
-
-            int roomId = 0;
-            return roomId;
-        }
 
         public T convertToEnum<T>(string value)
         {
