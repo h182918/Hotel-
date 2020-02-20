@@ -90,4 +90,28 @@ namespace HotelLibrary
         }
     }
 
+    public class bookingService
+    {
+        Booking newBooking(HotelLibrary.Size size, int customerId, DateTime to, DateTime from, Status status)
+        {
+            int roomId = findVacantRoom(size, to, from);
+            Booking b = new Booking(customerId, roomId, to, from, status);
+
+            return b;
+        }
+
+        int findVacantRoom(string size, DateTime to, DateTime from)
+        {
+            HotelLibrary.Size s = convertToEnum<HotelLibrary.Size>(size);
+
+            int roomId = 0;
+            return roomId;
+        }
+
+        public static T convertToEnum<T>(string value)
+        {
+            return (T)Enum.Parse(typeof(T), value, true);
+        }
+    }
+
 }
