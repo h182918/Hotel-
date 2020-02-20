@@ -97,6 +97,7 @@ namespace HotelLibrary
 
     public class bookingService
     {
+        //TODO Get DB call
         Booking newBooking(string size, int customerId, DateTime to, DateTime from, Status status)
         {
             int roomId = findVacantRoom(size, to, from);
