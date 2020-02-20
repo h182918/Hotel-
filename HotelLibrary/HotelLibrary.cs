@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace HotelLibrary
 {
@@ -29,6 +30,7 @@ namespace HotelLibrary
         CheckedIn,
         CheckedOut
     }
+
     public class HotelRoom
     {
         public int nBeds { get; private set; }
@@ -42,6 +44,8 @@ namespace HotelLibrary
 
         }
     }
+
+
 
     public class Booking
     {
@@ -133,6 +137,35 @@ namespace HotelLibrary
             return false;
 
         }
+
+        public List<HotelRoom> AvailableRooms(List<Booking> bookings, List<HotelRoom> rooms, DateTime dateFrom, DateTime dateTo, int nBeds, string size)
+        {
+            var validRooms = rooms.Where(i => i.nBeds == nBeds && i.size.Equals(size));
+            List<HotelRoom> validR = validRooms.ToList();
+
+            //loop through rooms 
+            foreach (HotelRoom r in validR)
+            {
+                if (!DateCheck(bookings, dateFrom, dateTo, r))
+
+                {
+                    validR.Remove(r);
+                }
+
+            }
+            return validR;
+
+        }
+
+ 
+
+        public HotelRoom validRoom(List<HotelRoom> availableRooms)
+        {
+            return availableRooms.First(); 
+        }
+
+
+
     }
 
 }

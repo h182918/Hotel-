@@ -14,7 +14,41 @@ namespace WebAppClient.CreateBooking
         List<Booking> bookings;
         List<HotelRoom> rooms;
 
-        bookingService bookingService = new bookingService();
+        bookingService bs = new bookingService();
+
+    
+
+        DateTime DateFrom
+        {
+
+            get
+            {
+
+                return DateFromCalendar.SelectedDate.Date;
+            }
+          
+        }
+
+
+            DateTime DateTo
+            {
+              
+                get {
+                    return DateToCalendar.SelectedDate.Date;
+                }
+            }
+
+        int NBeds
+        {
+            get
+            {
+                return int.Parse(DropDownList1.SelectedValue);
+            }
+        }
+
+
+
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,12 +78,14 @@ namespace WebAppClient.CreateBooking
 
         }
 
+       
+
         protected List<HotelRoom> AvailableRooms(DateTime dateFrom, DateTime dateTo, int nBeds, string size)
         {
             var validRooms = rooms.Where(i => i.nBeds == nBeds && i.size.Equals(size));
 
-            dateFrom = DateFromCalendar.SelectedDate;
-            dateTo = DateToCalendar.SelectedDate;  //litt usikker på om dette fungerer
+            dateFrom = DateFromCalendar.SelectedDate.Date;
+            dateTo = DateToCalendar.SelectedDate.Date;  //litt usikker på om dette fungerer
 
             nBeds = int.Parse(DropDownList1.Items.FindByValue("1").Value); //usikker på dette og må teste
 
@@ -60,7 +96,7 @@ namespace WebAppClient.CreateBooking
             //loop through rooms 
             foreach (HotelRoom r in validR)
             {
-                if (!DateCheck(dateFrom, dateTo, r))
+                if (!bs.DateCheck(bookings, dateFrom, dateTo, r))
                 
                 {
                     validR.Remove(r);
