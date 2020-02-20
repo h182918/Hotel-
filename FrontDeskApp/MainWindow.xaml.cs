@@ -76,12 +76,24 @@ namespace FrontDeskApp
 
             HotelLibrary.Size size = bs.convertToEnum<HotelLibrary.Size>(s);
 
-
             
             Booking b = bs.newBooking(size, nbeds, customerId, dateTo, dateFrom, Status.CheckedIn);
 
             bs.bookings.Add(b);
 
+        }
+
+        void removeReservation(int customerId, int roomId)
+        {
+            bookingService bs = new bookingService();
+            foreach(Booking b in bs.bookings)
+            {
+            if(b.roomId == roomId && b.customerId == customerId)
+                {
+                    bs.bookings.Remove(b);
+                }
+
+            }
         }
 
         
