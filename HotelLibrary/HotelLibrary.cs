@@ -139,9 +139,9 @@ namespace HotelLibrary
 
         }
 
-        public List<HotelRoom> AvailableRooms(List<Booking> bookings, List<HotelRoom> rooms, DateTime dateFrom, DateTime dateTo, int nBeds, string size)
+        public List<HotelRoom> AvailableRooms(List<Booking> bookings, List<HotelRoom> rooms, DateTime dateFrom, DateTime dateTo, int nBeds)
         {
-            var validRooms = rooms.Where(i => i.nBeds == nBeds && i.size.Equals(size));
+            var validRooms = rooms.Where(i => i.nBeds == nBeds);
             List<HotelRoom> validR = validRooms.ToList();
 
             //loop through rooms 
