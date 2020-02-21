@@ -19,39 +19,95 @@ namespace WebAppClient
 
 		bookingService bs = new bookingService();
 
-        private TextBox textBox1;
-        private FlowDocument flowDoc;
-        private Block table1;
+        List<Booking> myBookings = new List<Booking>();
 
-        int nBookings;
-
-        public CheckBooking()
-        {
-            InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
+        int myId = 1; 
+     
 
         protected void Page_Load(object sender, EventArgs e)
 		{
 
-            //if() bruker har bookings så
+            DataTable dt = this.getData(bs.bookings);
 
-            //creating a parent FlowDocument()
-            flowDoc = new FlowDocument();
-
-            //Creating a table
-            flowDoc.Blocks.Add(table1);
+            StringBuilder html = new StringBuilder();
+            html.Append("<table border = '1'>");
 
 
-            int numberOfColumns = nBookings;
-
-       
+            html.Append("<tr>");
 
 
+            foreach (DataColumn column in dt.Columns)
+            {
+                html.Append("<th>");
+                html.Append(column.ColumnName);
+                html.Append("</th>");
+            }
+            html.Append("</tr>");
+
+
+            //Building the Data rows.
+            foreach (DataRow row in dt.Rows)
+            {
+                html.Append("<tr>");
+                foreach (DataColumn column in dt.Columns)
+                {
+                    html.Append("<td>");
+                    html.Append(row[column.ColumnName]);
+                    html.Append("</td>");
+                }
+                html.Append("</tr>");
+            }
+            //Table end.
+            html.Append("</table>");
+            string strText = html.ToString();
+
+          
+
+
+            ////Append the HTML string to Placeholder.
+            placeholder.Controls.Add(new Literal { Text = html.ToString() });
+   
+
+
+    }
+
+
+        public DataTable getData(List<Booking> bookings)
+        {
+
+            foreach (Booking b in bs.bookings)
+            {
+                //if(b.customerId == myId)
+                //{
+                    myBookings.Add(b);
+                //}
+
+            }
+
+
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Room ID", typeof(int));
+            dt.Columns.Add("Date From", typeof(DateTime));
+            dt.Columns.Add("Date To", typeof(DateTime));
+            dt.Columns.Add("Numbers of beds", typeof(int));
+            dt.Columns.Add("Type", typeof(HotelLibrary.Size));  //muligens dette må være string
+
+            foreach(Booking b in myBookings)
+            {
+                foreach(HotelRoom r in bs.rooms)
+                {
+                    if (b.roomId == r.roomId) {
+                        dt.Rows.Add(b.roomId, b.from, b.to, r.nBeds, r.size);
+                   }
+                }
+                
+            }
+           
+
+
+
+            return dt;
         }
 
 

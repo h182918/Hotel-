@@ -101,11 +101,58 @@ namespace HotelLibrary
         public List<Booking> bookings { get; set; }
         public List<HotelRoom> rooms { get; set; }
 
+
+        Booking b1 = new Booking(1, 1, DateTime.Now, DateTime.Now.AddDays(1), Status.CheckedIn, "hei");
+        Booking b2 = new Booking(1, 2, DateTime.Now, DateTime.Now.AddDays(1), Status.CheckedIn, "hei");
+
+
+        HotelRoom r1 = new HotelRoom(1, Size.Single, 1);
+        HotelRoom r2 = new HotelRoom(2, Size.Single, 1);
+        HotelRoom r3 = new HotelRoom(3, Size.Single, 1);
+
+        HotelRoom r4 = new HotelRoom(4, Size.Double, 2);
+        HotelRoom r5 = new HotelRoom(5, Size.Double, 2);
+        HotelRoom r6 = new HotelRoom(6, Size.Double, 2);
+
+        HotelRoom r7 = new HotelRoom(7, Size.Triple, 3);
+        HotelRoom r8 = new HotelRoom(8, Size.Triple, 3);
+        HotelRoom r9 = new HotelRoom(9, Size.Triple, 3);
+        HotelRoom r10 = new HotelRoom(10, Size.Triple, 3);
+
+        HotelRoom r11 = new HotelRoom(11, Size.Suite, 4);
+        HotelRoom r12 = new HotelRoom(12, Size.Suite, 4);
+        HotelRoom r13 = new HotelRoom(13, Size.Suite, 4);
+
+
+        
+
+
         public bookingService()
         {
             bookings = new List<Booking> () ;//ServerKall();
             rooms = new List<HotelRoom>(); //ServerKall();   //bare tull etter = , errorfiks
+            rooms.Add(r1);
+            rooms.Add(r2);
+            rooms.Add(r3);
+            rooms.Add(r4);
+            rooms.Add(r5);
+            rooms.Add(r6);
+            rooms.Add(r7);
+            rooms.Add(r8);
+            rooms.Add(r9);
+            rooms.Add(r10);
+            rooms.Add(r11);
+            rooms.Add(r12);
+            rooms.Add(r13);
+
+            bookings.Add(b1);
+            bookings.Add(b2);
+
+
+
         }
+
+
         public Booking newBooking(Size size, int nbeds, int customerId, DateTime to, DateTime from, Status status)
         {
             int roomId = firstValidRoomFromList(AvailableRooms(bookings, rooms, from, to, nbeds, size)).roomId;
