@@ -109,6 +109,7 @@ namespace WebAppClient.CreateBooking
            HotelRoom theRoom = bs.firstValidRoomFromList(availablerooms);
 
             MessageBox.Show("This room is available, and suits your preferences: " + showRoom(theRoom));
+           
 
             //Book.Enabled = true;
             //Book.Visible = true;
@@ -119,7 +120,7 @@ namespace WebAppClient.CreateBooking
                 //Create button - Yes it is available, do you want to book?
                 //onmouseclick - makeReservation.
 
-              //  MessageBox.Show("Do you want to book a room from: "+  DateFrom.Date.ToString() + " to " +  DateTo.Date.ToString() + " with "  + NBeds +  " beds and type: " +Size.ToString());
+               MessageBox.Show("Do you want to book a room from: "+  DateFrom.Date.ToString() + " to " +  DateTo.Date.ToString() + " with "  + NBeds +  " beds and type: " +Size.ToString());
 
 
                 string name = "yes";
