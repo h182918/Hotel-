@@ -306,6 +306,16 @@
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
+      },
+      "HotelLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/HotelLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HotelLibrary.dll": {}
+        }
       }
     },
     "UAP,Version=v10.0.17763/win10-arm": {
@@ -791,6 +801,16 @@
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
+        }
+      },
+      "HotelLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/HotelLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HotelLibrary.dll": {}
         }
       }
     },
@@ -1279,6 +1299,16 @@
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
+      },
+      "HotelLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/HotelLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HotelLibrary.dll": {}
+        }
       }
     },
     "UAP,Version=v10.0.17763/win10-arm64-aot": {
@@ -1766,6 +1796,16 @@
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
+      },
+      "HotelLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/HotelLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HotelLibrary.dll": {}
+        }
       }
     },
     "UAP,Version=v10.0.17763/win10-x64": {
@@ -2251,6 +2291,16 @@
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
+        }
+      },
+      "HotelLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/HotelLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HotelLibrary.dll": {}
         }
       }
     },
@@ -2739,6 +2789,16 @@
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
+      },
+      "HotelLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/HotelLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HotelLibrary.dll": {}
+        }
       }
     },
     "UAP,Version=v10.0.17763/win10-x86": {
@@ -3224,6 +3284,16 @@
         },
         "native": {
           "runtimes/win10-x86/nativeassets/uap10.0.15138/clrcompression.dll": {}
+        }
+      },
+      "HotelLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/HotelLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HotelLibrary.dll": {}
         }
       }
     },
@@ -3711,6 +3781,16 @@
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
+        }
+      },
+      "HotelLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/HotelLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HotelLibrary.dll": {}
         }
       }
     }
@@ -8143,33 +8223,42 @@
         "runtimes/win10-x86/lib/uap10.0.15138/netstandard.dll",
         "runtimes/win10-x86/nativeassets/uap10.0.15138/clrcompression.dll"
       ]
+    },
+    "HotelLibrary/1.0.0": {
+      "type": "project",
+      "path": "../HotelLibrary/HotelLibrary.csproj",
+      "msbuildProject": "../HotelLibrary/HotelLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "UAP,Version=v10.0.17763": [
+      "HotelLibrary >= 1.0.0",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.2.9"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bruker\\.nuget\\packages\\": {},
+    "C:\\Users\\BettyBlue\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bruker\\source\\repos\\Hotel-\\MaintenanceApp\\MaintenanceApp.csproj",
+      "projectUniqueName": "C:\\Users\\BettyBlue\\source\\repos\\h182918\\Hotel-\\MaintenanceApp\\MaintenanceApp.csproj",
       "projectName": "MaintenanceApp",
-      "projectPath": "C:\\Users\\bruker\\source\\repos\\Hotel-\\MaintenanceApp\\MaintenanceApp.csproj",
-      "packagesPath": "C:\\Users\\bruker\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bruker\\source\\repos\\Hotel-\\MaintenanceApp\\obj\\",
+      "projectPath": "C:\\Users\\BettyBlue\\source\\repos\\h182918\\Hotel-\\MaintenanceApp\\MaintenanceApp.csproj",
+      "packagesPath": "C:\\Users\\BettyBlue\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\BettyBlue\\source\\repos\\h182918\\Hotel-\\MaintenanceApp\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\bruker\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\BettyBlue\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "uap10.0.17763"
@@ -8180,7 +8269,11 @@
       },
       "frameworks": {
         "uap10.0.17763": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\BettyBlue\\source\\repos\\h182918\\Hotel-\\HotelLibrary\\HotelLibrary.csproj": {
+              "projectPath": "C:\\Users\\BettyBlue\\source\\repos\\h182918\\Hotel-\\HotelLibrary\\HotelLibrary.csproj"
+            }
+          }
         }
       }
     },
