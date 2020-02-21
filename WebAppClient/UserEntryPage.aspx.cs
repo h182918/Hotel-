@@ -6,7 +6,7 @@ namespace WebAppClient
 {
     public partial class UserEntryPage : System.Web.UI.Page
     {
-        private readonly List<Booking> bookings;
+       // private readonly List<Booking> bookings;
 
 
 
@@ -16,10 +16,10 @@ namespace WebAppClient
             //if user has bookings 
 
 
-            foreach (Booking b in bookings)
-            {
-                if (b.customerId != -1)  //må sette customerID til -1 hvis det ikke finnes
-                {
+            //foreach (Booking b in bookings)
+            //{
+            //    if (b.customerId != -1)  //må sette customerID til -1 hvis det ikke finnes
+            //    {
 
                     // show grid
                     //GridView.DataSource =  
@@ -32,8 +32,8 @@ namespace WebAppClient
 
                     //}
                     //{
-                }
-            }
+            //    }
+            //}
 
         
         }
