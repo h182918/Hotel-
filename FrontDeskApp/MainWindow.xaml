@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:FrontDeskApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Frame x:Name="_mainFrame" />
     <Grid Name="FrontDeskGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
